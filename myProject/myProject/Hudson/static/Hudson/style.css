@@ -1,0 +1,71 @@
+h1{
+    text-align: center;
+    font-family: monospace;
+    color: rgb(95, 60, 13);
+}
+
+#chatbot{
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    margin-top: 50px;
+    border-radius: 10px;
+    border: 1px solid rgb(96, 79, 36);
+    border-width: 5px;
+}
+
+.hudsonText{
+    font-family: monospace;
+    font-size: 14px;
+    font-weight: 700;
+    /*have chatbot text on left and user 
+    text on the right like a normal text message conversation*/
+    text-align: left;
+    line-height: 25px;
+    color: rgb(14, 8, 35);
+    padding: 5px;
+}
+
+
+/*text displayed in conversation*/
+.userText{
+    font-family: monospace;
+    font-size: 14px;
+    /*have user text on the right of conversation*/
+    text-align: right;
+    line-height: 25px;
+    color: rgb(82, 82, 123);
+    padding: 5px;
+}
+
+
+#userInput{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+    width: 70%;
+    text-align: center;
+}
+
+/*text in message type area*/
+#textInput{
+    border: 3px solid wheat;
+    border-bottom: 3px solid rgb(189, 171, 138);
+    font-family: monospace;
+    font-size: 14px;
+    padding: 16px;
+    color: rgb(59, 36, 14);
+}
+
+#buttonInput{
+    padding: 6px;
+    font-family: monospace;
+    font-size: 14px;
+    border: 3px solid rgb(70, 43, 11);
+    background-color: rgb(139, 103, 44);
+    color: beige;
+    border-radius: 10px;
+}
+
+
+

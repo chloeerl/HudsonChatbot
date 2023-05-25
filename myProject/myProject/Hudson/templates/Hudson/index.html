@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Hudson</title>
+
+    {% load static%}
+    <link rel="stylesheet" type="text/css" href="{% static 'Hudson/style.css' %}" />
+
+    <!--add jquery cdn to project-->
+    <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+<h1>Hudson🐶</h1>
+
+
+<div>
+    <div id="chatbot">
+        <p class="hudsonText"><span>🐶  Hello my name is Hudson I can give you tips on sleep, exercise, socialising, and school work.</span></p>
+    </div>
+
+    <div id="userInput">
+        <input type="text" id="textInput" name="usersMessage" placeholder="Type your message..."/>
+        <!--Value is what user sees in the button, type determines what input is-->
+        <input type="submit" value="Send" id="buttonInput" />
+    </div>
+</div>
+
+<!--get text from user-->
+<script>
+
+    function getUserInput(){
+        var userText = $('#textInput').val();
+        <!--Insert user text into conversation area-->
+        var user = "<p class='userText'<span>"+userText+"</span></p>";
+        $('#textInput').val("");
+
+        $('#chatbot').append(user);
+
+        <!--Send text to python from frontend to backend-->
+        <!--message is the key used in pyhon django to access userText-->
+        $.get('/Hudson/getResponse', {message:userText}).done(function(info){
+            var recievedMessage = "<p class='hudsonText'>🐶  <span>"+ info +"</span></p>";
+            $('#chatbot').append(recievedMessage);
+        })
+    }
+
+<!--When the user clicks on the button to send message-->
+$('#buttonInput').click(function(){
+    getUserInput();
+})
+
+</script>
+
+
+</body>
+</html>
